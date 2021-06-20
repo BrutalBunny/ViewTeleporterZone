@@ -71,12 +71,15 @@ event ActorEntered( actor Other )
 {
 	local PlayerPawn PP;
 
-	Log("ACTOR ENTERING");
+    Super.ActorEntered(Other);
 
     if( !Other.IsA('TournamentPlayer') && !Other.IsA('Bot') ) return;
     if( PlayerPawn(Other) == None ) return;
 
     PP = PlayerPawn(Other);
+
+    if( PP.PlayerReplicationInfo == None ) return;
+    if( PP.PlayerReplicationInfo.bIsSpectator ) return;
 
    	PInfo[PP.PlayerReplicationInfo.PlayerID].Player = PP;
     PInfo[PP.PlayerReplicationInfo.PlayerID].bEnteredTeleportZone = true;
@@ -87,13 +90,14 @@ event ActorLeaving( actor Other )
 	local PlayerPawn PP;
 
 	Super.ActorLeaving(Other);
-
-	Log("ACTOR LEAVING");
-    
+   
     if( !Other.IsA('TournamentPlayer') && !Other.IsA('Bot') ) return;
     if( PlayerPawn(Other) == None ) return;
 
     PP = PlayerPawn(Other);
+
+    if( PP.PlayerReplicationInfo == None ) return;
+    if( PP.PlayerReplicationInfo.bIsSpectator ) return;
 
     PInfo[PP.PlayerReplicationInfo.PlayerID].Player = PP;
 	PInfo[PP.PlayerReplicationInfo.PlayerID].bEnteredTeleportZone = false;
