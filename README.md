@@ -18,3 +18,4 @@ __yDirectionTriggeringMinRange__: Min value of the view direction.
 ![view rotation](https://github.com/BrutalBunny/ViewTeleporterZone/blob/main/unnamed.png?raw?true)
 
 
+
