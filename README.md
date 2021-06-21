@@ -15,6 +15,6 @@ __yDirectionTriggeringMinRange__: Min value of the view direction.
 * If __ViewDirectionTeleport__ is LOOK_UP the value should be between 0 and 18000. 
 * In other case if __ViewDirectionTeleport__ is LOOK_DOWN should be between 49152 and 65536.  
 
-![view rotation](https://github.com/BrutalBunny/ViewTeleporterZone/blob/main/viewrotation.png?raw?true)
+![view rotation](https://github.com/BrutalBunny/ViewTeleporterZone/blob/main/unnamed.png?raw?true)
 
 
